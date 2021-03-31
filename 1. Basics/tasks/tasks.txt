@@ -2,7 +2,7 @@
 
 2. Создать класс с методом removeFalsyValues
   - Пример: [45, '', 0, 'hello', 4.7, false] => [45, 'hello, 4.7]
-  - Falsy-значения: '', 0, false, [], null, undefined
+  - Falsy-значения: '', 0, false, null, undefined, NaN
 
 3. Тестовые сценарии:
   - Falsy-значения удаляются из непустого массива
