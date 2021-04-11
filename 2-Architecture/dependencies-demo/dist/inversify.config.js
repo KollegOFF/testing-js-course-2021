@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.myContainer = void 0;
+var inversify_1 = require("inversify");
+var types_1 = require("./types");
+var data_service_1 = require("./data-service");
+require("reflect-metadata");
+var myContainer = new inversify_1.Container();
+exports.myContainer = myContainer;
+myContainer.bind(types_1.TYPES.IDataService).to(data_service_1.default);
