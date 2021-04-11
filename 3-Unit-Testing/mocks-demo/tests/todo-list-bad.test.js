@@ -6,6 +6,7 @@ jest.mock('node-fetch', () => jest.fn().mockImplementation(() => ({
   json: jest.fn().mockResolvedValue(mockExpectedLoadData)
 })));
 
+// Заглушка модуля, в котором экспортируются инстанциируемый класс
 jest.mock('../src/data-service', () => jest.fn().mockImplementation(function mockDataService() {
   this.load = jest.fn().mockResolvedValue(mockExpectedLoadData);
 }));
