@@ -12,14 +12,18 @@ jest.mock('../src/data-service', () => jest.fn().mockImplementation(function moc
 }));
 
 describe('Todo List bad implementations tests', () => {
+  let expectedItems;
+
+  beforeAll(() => {
+    const items = ['Test item 1', 'Test item 2'];
+    expectedItems = items.map((item) => {
+      return new TodoItem(item);
+    });
+  });
+
   test('Load items sucessfully using bad load', async () => {
     // Arrange
     expect.hasAssertions();
-
-    const items = ['Test item 1', 'Test item 2'];
-    const expectedItems = items.map((item) => {
-      return new TodoItem(item);
-    });
 
     const todoList = new TodoList({});
 
@@ -34,11 +38,6 @@ describe('Todo List bad implementations tests', () => {
   test('Load items sucessfully using bad load with no DI', async () => {
     // Arrange
     expect.hasAssertions();
-
-    const items = ['Test item 1', 'Test item 2'];
-    const expectedItems = items.map((item) => {
-      return new TodoItem(item);
-    });
 
     const todoList = new TodoList({});
 

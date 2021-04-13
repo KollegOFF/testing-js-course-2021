@@ -1,7 +1,8 @@
 import TestExample from '../src/test-example';
 
+
 it('Should return user age if user is above 18 years', async () => {
-  debugger;
+  window.alert = jest.fn();
 
   expect.hasAssertions();
   const EXPECTED_AGE = 18;
