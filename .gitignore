@@ -16,3 +16,6 @@
 npm-debug.log*
 yarn-error.log
 testem.log
+
+# mac
+**/.DS_Store
