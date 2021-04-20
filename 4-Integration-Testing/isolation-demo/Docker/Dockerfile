@@ -9,7 +9,7 @@ RUN apt-get -y install git
 
 RUN npm install -g json-server
 
-RUN	git clone --depth=50 https://github.com/Flexberry/testing-js-course-2021.git /integration-src && \
+RUN	git clone https://github.com/Flexberry/testing-js-course-2021.git /integration-src && \
   cd /integration-src/$PROJECT; \
   npm install
 
