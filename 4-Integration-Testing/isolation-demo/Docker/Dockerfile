@@ -9,9 +9,7 @@ RUN apt-get -y install git
 
 RUN npm install -g json-server
 
-RUN	git clone https://github.com/Flexberry/testing-js-course-2021.git /integration-src && \
-  cd /integration-src/$PROJECT; \
-  npm install
+RUN	git clone https://github.com/Flexberry/testing-js-course-2021.git /integration-src
 
 ENTRYPOINT ["json-server", "--host", "0.0.0.0", "--watch"]
 
