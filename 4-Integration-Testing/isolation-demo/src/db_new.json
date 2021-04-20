@@ -1,0 +1,19 @@
+{
+  "todo-items": [
+    {
+      "id": 1,
+      "name": "Сделать домашку",
+      "isDone": false
+    },
+    {
+      "id": 2,
+      "name": "Закончить курс по тестированию",
+      "isDone": false
+    },
+    {
+      "id": 3,
+      "name": "Выучить Python",
+      "isDone": false
+    }
+  ]
+}
