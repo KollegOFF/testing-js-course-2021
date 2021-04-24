@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "config:js-app",
+    ":automergeAll",
+    ":disableRateLimiting",
+    ":docker",
+    ":rebaseStalePrs",
+    ":masterIssue"
+  ],
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "prCreation": "not-pending",
+  "stabilityDays": 3
+}
