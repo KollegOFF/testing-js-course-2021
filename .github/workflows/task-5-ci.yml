@@ -1,0 +1,34 @@
+name: TASK-5-CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./3-Unit-Testing/good-architecture
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '10.x'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Setup environment
+      run: |
+        npm install -g json-server pm2
+        pm2 start json-server -- ./tests/db.json
+
+    - name: Run tests
+      run: npm test
