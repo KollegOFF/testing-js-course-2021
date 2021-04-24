@@ -1,3 +1,5 @@
+import fetch from 'node-fetch';
+
 /** Data service for persisting somme entity using REST API. */
 const RestApiStorageDataService = class {
   /**
@@ -13,7 +15,7 @@ const RestApiStorageDataService = class {
   }
 
   changeEntity(entity) {
-    return this._sendRequest('PUT', entity);
+    return this._sendRequest('PUT', entity, entity.id);
   }
 
   deleteEntity(entity) {
@@ -79,17 +81,17 @@ const RestApiStorageDataService = class {
     }
   }
 
-  async _sendRequest(method, entity) {
+  async _sendRequest(method, entity, id) {
     try {
-      const response = await this._makeRequest(method, entity);
+      const response = await this._makeRequest(method, entity, id);
       return response.ok;
     } catch (error) {
       return false;
     }
   }
 
-  _makeRequest(method, entity) {
-    return fetch(this.endpointURL, {
+  _makeRequest(method, entity, id) {
+    return fetch(`${this.endpointURL}${id ? `/${id}` : ''}`, {
       method,
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
