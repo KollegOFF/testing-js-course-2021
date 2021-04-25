@@ -7,7 +7,10 @@ const IssuesDataStorage = class {
    */
   constructor(dataService) {
     this.dataService = dataService;
-    this._issues = this.dataService.loadEntities();
+  }
+
+  async init() {
+    this._issues = await this.dataService.loadEntities();
   }
 
   /**

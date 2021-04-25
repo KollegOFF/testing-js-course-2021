@@ -1,3 +1,5 @@
+import fetch from 'node-fetch';
+
 /** Data service for persisting somme entity using REST API. */
 const RestApiStorageDataService = class {
   /**

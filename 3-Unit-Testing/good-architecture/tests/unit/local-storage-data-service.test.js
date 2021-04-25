@@ -1,4 +1,4 @@
-import LocalStorageDataService from '../src/local-storage-data-service';
+import LocalStorageDataService from '../../src/local-storage-data-service';
 
 describe('Local Storage Data Service', () => {
   test('dateteEntityById works correctly on non empty data', () => {

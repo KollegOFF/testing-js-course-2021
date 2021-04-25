@@ -1,0 +1,15 @@
+{
+  "name": "e2e-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run"
+  },
+  "keywords": [],
+  "author": "Evgeniy Khaberev <ehaberev@yandex.ru>",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^7.1.0"
+  }
+}
